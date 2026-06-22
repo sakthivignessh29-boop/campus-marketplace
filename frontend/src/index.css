@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #2E7D32;
+  --color-primary-dark: #1B5E20;
+  --color-primary-light: #4CAF50;
+  --color-secondary: #4CAF50;
+  --color-light-green: #A5D6A7;
+  --color-mint: #E8F5E9;
+  --color-forest: #1B5E20;
+  --color-accent: #81D4FA;
+  --color-eco-bg: #F8FFF8;
+  
+  --font-sans: "Inter", sans-serif;
+  --font-poppins: "Poppins", sans-serif;
+}
+
+@utility glass {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+@utility glass-dark {
+  background: rgba(27, 94, 32, 0.05);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(27, 94, 32, 0.1);
+}
+
+@utility leaf-pattern {
+  background-image: radial-gradient(rgba(76, 175, 80, 0.04) 1px, transparent 0);
+  background-size: 24px 24px;
+}
+
+@layer base {
+  body {
+    @apply bg-eco-bg text-gray-800 font-sans min-h-screen selection:bg-primary/20 selection:text-primary-dark;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-poppins;
+  }
+}
+
+/* Leaf floating animation styling */
+@keyframes float {
+  0% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-10px) rotate(3deg); }
+  100% { transform: translateY(0px) rotate(0deg); }
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+.leaflet-container {
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
